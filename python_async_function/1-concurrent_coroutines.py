@@ -20,8 +20,3 @@ async def wait_n(n: int, max_delay: int) -> List[float]:
     and returns sorted delays."""
     delays = [wait_random(max_delay) for _ in range(n)]
     return [await f for f in asyncio.as_completed(delays)]
-
-if __name__ == "__main__":
-    import asyncio
-    random_delays = asyncio.run(wait_n(10, 5))
-    print(random_delays)

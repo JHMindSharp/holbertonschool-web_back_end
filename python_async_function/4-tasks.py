@@ -26,12 +26,3 @@ async def task_wait_n(n: int, max_delay: int) -> List[float]:
     tasks = [task_wait_random(max_delay) for _ in range(n)]
     results = await asyncio.gather(*tasks)
     return results
-
-if __name__ == "__main__":
-    async def main():
-        n = 5
-        max_delay = 6
-        results = await task_wait_n(n, max_delay)
-        print(results)
-
-    asyncio.run(main())
