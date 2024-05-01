@@ -48,7 +48,8 @@ class Server:
 
         Args:
             page: An integer representing the page number (default is 1).
-            page_size: An integer representing the size of each page (default is 10).
+            page_size: An integer representing the size of
+            each page (default is 10).
 
         Returns:
             A list of lists representing the data for the specified page.
