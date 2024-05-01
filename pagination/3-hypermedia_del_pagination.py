@@ -7,11 +7,14 @@ import csv
 import math
 from typing import List, Dict
 
+
 def index_range(page: int, page_size: int) -> tuple:
-    """Returns a tuple of size two containing a start index and an end index."""
+    """Returns a tuple of size two containing a start
+    index and an end index."""
     start = (page - 1) * page_size
     end = start + page_size
     return (start, end)
+
 
 class Server:
     """Server class to paginate a database of popular baby names."""
@@ -34,7 +37,8 @@ class Server:
         """Returns dataset indexed by position."""
         if self.__indexed_dataset is None:
             dataset = self.dataset()
-            self.__indexed_dataset = {i: dataset[i] for i in range(len(dataset))}
+            self.__indexed_dataset = {
+                i: dataset[i] for i in range(len(dataset))}
         return self.__indexed_dataset
 
     def get_hyper_index(self, index: int = 0, page_size: int = 10) -> Dict:
