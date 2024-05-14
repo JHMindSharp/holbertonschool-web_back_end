@@ -1,7 +1,7 @@
-const signUpUser = require('./4-user-promise');
-const uploadPhoto = require('./5-photo-reject');
+import signUpUser from './4-user-promise';
+import uploadPhoto from './5-photo-reject';
 
-function handleProfileSignup(firstName, lastName, fileName) {
+export default function handleProfileSignup(firstName, lastName, fileName) {
   const signUp = signUpUser(firstName, lastName);
   const upload = uploadPhoto(fileName);
 
@@ -12,5 +12,3 @@ function handleProfileSignup(firstName, lastName, fileName) {
     }));
   });
 }
-
-module.exports = handleProfileSignup;
