@@ -1,7 +1,7 @@
 {
   "name": "ES6_promise",
   "version": "1.0.0",
-  "description": "",
+  "description": "This project covers the usage of ES6 Promises in JavaScript. Below is an overview of the tasks completed in this project:",
   "main": "index.js",
   "scripts": {
     "test": "jest",
@@ -15,7 +15,9 @@
     "@babel/node": "^7.23.9",
     "@babel/preset-env": "^7.24.5",
     "babel-jest": "^24.9.0",
-    "eslint": "^6.6.0",
+    "eslint": "^6.8.0",
     "jest": "^24.9.0"
-  }
+  },
+  "dependencies": {},
+  "keywords": []
 }
