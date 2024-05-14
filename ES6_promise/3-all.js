@@ -1,4 +1,4 @@
-import { uploadPhoto, createUser } from './utils.js';
+const { uploadPhoto, createUser } = require('./utils');
 
 function handleProfileSignup() {
   return Promise.all([uploadPhoto(), createUser()])
@@ -10,4 +10,4 @@ function handleProfileSignup() {
     });
 }
 
-export default handleProfileSignup;
+module.exports = handleProfileSignup;

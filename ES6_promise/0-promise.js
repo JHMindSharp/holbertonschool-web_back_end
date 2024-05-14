@@ -4,5 +4,5 @@ function getResponseFromAPI() {
     });
   }
   
-  export default getResponseFromAPI;
+  module.exports = getResponseFromAPI;
   

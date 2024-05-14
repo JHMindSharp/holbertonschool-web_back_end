@@ -10,5 +10,5 @@ function handleResponseFromAPI(promise) {
       });
   }
   
-  export default handleResponseFromAPI;
+  module.exports = handleResponseFromAPI;
   

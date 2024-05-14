@@ -10,5 +10,5 @@ function guardrail(mathFunction) {
     return queue;
   }
   
-  export default guardrail;
+  module.exports = guardrail;
   

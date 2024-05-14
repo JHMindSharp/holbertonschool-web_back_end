@@ -11,5 +11,5 @@ function getFullResponseFromAPI(success) {
     });
   }
   
-  export default getFullResponseFromAPI;
+  module.exports = getFullResponseFromAPI;
   
