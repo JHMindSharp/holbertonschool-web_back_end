@@ -5,10 +5,11 @@ export default class Car {
     this._brand = brand;
     this._motor = motor;
     this._color = color;
-    this[CarSymbol] = () => new Car(this._brand, this._motor, this._color);
   }
 
   cloneCar() {
-    return this[CarSymbol]();
+    return Object.assign(Object.create(Object.getPrototypeOf(this)), {
+      [CarSymbol]: true,
+    });
   }
 }
