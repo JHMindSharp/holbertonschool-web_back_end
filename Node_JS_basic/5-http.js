@@ -8,24 +8,31 @@ const app = http.createServer((req, res) => {
   } else if (req.url === '/students') {
     countStudents(process.argv[2])
       .then((fields) => {
-        res.writeHead(200, { 'Content-Type': 'text/plain' });
-        res.write('This is the list of our students\n');
+        let response = 'This is the list of our students\n';
         const totalStudents = Object.values(fields).reduce((acc, curr) => acc + curr.length, 0);
-        res.write(`Number of students: ${totalStudents}\n`);
+        response += `Number of students: ${totalStudents}\n`;
+
         for (const field in fields) {
           if (fields.hasOwnProperty(field)) {
-            res.write(`Number of students in ${field}: ${fields[field].length}. List: ${fields[field].join(', ')}\n`);
+            response += `Number of students in ${field}: ${fields[field].length}. List: ${fields[field].join(', ')}\n`;
           }
         }
-        res.end();
+
+        res.writeHead(200, { 'Content-Type': 'text/plain' });
+        res.end(response);
       })
       .catch((error) => {
         res.writeHead(500, { 'Content-Type': 'text/plain' });
-        res.end(error.message);
+        res.end('Cannot load the database');
       });
+  } else {
+    res.writeHead(404, { 'Content-Type': 'text/plain' });
+    res.end('Not Found');
   }
 });
 
-app.listen(1245);
+app.listen(1245, () => {
+  console.log('Server is running on port 1245');
+});
 
 module.exports = app;
